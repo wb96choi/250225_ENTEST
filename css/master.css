@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 
+:root {
+    --slide-width: 100vw;
+}
+
 /* font */
 body {
 	font-size: 25px;
@@ -54,67 +58,82 @@ nav ul li a:hover {
 }
 
 /* section */
+.section {
+    position: relative;
+}
 
 /* sec01 */
 #sec01 {
-    width: 100%;
     height: 870px;
     background: url(../images/main.jpg) no-repeat;
-    background-size: cover;
-    background-position: top center;
+    background-size: 100%;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-#sec01:after {
+/* #sec01:after {
     content: '';
     position: absolute;
     top: 0;left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
+} */
+
+.slide_container article p {
+    display: inline-block;
 }
 
-#sec01 .slide {
+.slide_container article .title {
+	font-family: 'Pretendard-Bold';
+    font-size: 2.84em;
+    line-height: 100px;
+    margin-bottom: 50px;
+}
+
+.slide_container article .text {
+    font-size: 1.24em;
+    line-height: 50px;
+}
+
+.slide_container {
     position: absolute;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.slide_wrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    transition: left 0.5s ease-in-out;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, var(--slide-width));
+    grid-auto-flow: column;
+    margin: 0 auto;
+}
+
+.slide_container .slide_content {
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#sec01 .slide .slide_content {
-    position: absolute;
-}
-
-.slide .slide_content article {
+.slide_container .slide_content article {
     width: 50vw;
     color: #fff;
 }
 
-article p {
-    display: inline-block;
-}
-
-article .title {
-	font-family: 'Pretendard-Bold';
-    font-size: 71px;
-    line-height: 100px;
-    margin-bottom: 50px;
-}
-
-article .text {
-    font-size: 31px;
-    line-height: 50px;
-}
-
 .slideBtn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 50%;left: 50%;
+    transform: translate(-50%, -50%);
     width: 95vw;
     display: flex;
     justify-content: space-between;
@@ -122,5 +141,142 @@ article .text {
 
 .slideBtn button {
     color: #fff;
-    font-size: 100px;
+    font-size: 4em;
+}
+
+/* sec02 */
+#sec02 {
+    height: 100vh;
+    border-bottom: 3px solid red;
+}
+
+.card_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100vw;
+}
+
+.card {
+    width: 340px;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1480px) {
+    .card_container {
+        width: calc(100vw - 400px);
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+@media (max-width: 1210px) {
+    .card_container {
+        width: calc(100vw - 300px);
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+.card .card_img {
+    height: 190px;
+    overflow: hidden;
+}
+
+.card .card_img img {
+    height: 120%;
+}
+
+.card article {
+    position: relative;
+    height: 230px;
+    padding: 30px;
+}
+
+.card article p {
+    display: inline-block;
+}
+
+.card article .title {
+	font-family: 'Pretendard-Bold';
+    font-size: 1.24em;
+    line-height: 38px;
+    margin-bottom: 20px;
+}
+
+.card article .text {
+    font-size: 0.72em;
+    line-height: 27px;
+}
+
+.card article .sub_text {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: 0.64em;
+    line-height: 27px;
+    color: #bdbdbd;
+}
+
+/* sec03 */
+#sec03 {
+    height: 100vh;
+}
+
+.sticker {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    cursor: move;
+}
+.drop-area {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    line-height: 200px;
+    margin: 50px auto;
+}
+.highlight {
+    border-color: green;
+}
+
+
+
+
+
+
+/* footer */
+footer {
+    position: relative;
+    background-color: #1b1c1c;
+    height: 350px;
+    color: #fff;
+    padding: 0px 240px;
+	font-family: 'Pretendard-ExtraLight';
+    font-size: 21px;
+}
+
+footer .footer_img {
+    display: inline-block;
+    height: 64px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+footer .footer_img img {
+    height: 100%;
+    filter: brightness(0) contrast(100) invert(1);
 }
