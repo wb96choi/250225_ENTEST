@@ -246,9 +246,40 @@ nav ul li button:hover {
     transform: rotate(0deg);
 }
 
+.pointer_wrap {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
+.hand {
+    background: url(../images/dragpointer.png) no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    top: -200px;
+    left: -170px;
+}
 
+.hand.on {
+    display: block;
+    animation: 2.3s ease-in-out 0s infinite normal none running move1;
+}
 
+@keyframes move1 {
+    0% {
+        top: -200px;
+        left: -170px;
+    }
+
+    100% {
+        top: -350px;
+        left: -650px;
+    }
+} 
 
 
 /* footer */

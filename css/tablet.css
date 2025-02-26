@@ -81,6 +81,30 @@
         top: 260px;
         left: 535px;
     }
+    
+    .hand {
+        width: 80px;
+        height: 80px;
+        top: -90px;
+        left: -123px;
+    }
+    
+    .hand.on {
+        display: block;
+        animation: 2.3s ease-in-out 0s infinite normal none running move1;
+    }
+    
+    @keyframes move1 {
+        0% {
+            top: -90px;
+            left: -123px;
+        }
+    
+        100% {
+            top: -200px;
+            left: -460px;
+        }
+    }
 
     /* footer */
     footer {

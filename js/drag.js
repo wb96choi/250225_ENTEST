@@ -6,6 +6,8 @@ $(document).ready(function () {
     dragItem.on('mousedown touchstart', function (e) {
         var offsetX, offsetY;
 
+        handStop();
+
         if (e.type === 'mousedown') {
             offsetX = e.clientX - dragItem.position().left;
             offsetY = e.clientY - dragItem.position().top;
@@ -70,6 +72,8 @@ $(document).ready(function () {
             dragItemOffset.top > dropBottom
         );
     }
-
-    console.log("drag.js loaded");
+    
+    function handStop() {
+        $('.pointer_wrap .hand').stop().removeAttr('style').removeClass('on');
+    }
 });
