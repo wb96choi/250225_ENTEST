@@ -22,7 +22,7 @@ header {
     top: 0;
     height: 53px;
     background-color: #fff;
-    padding: 0px 120px;
+    padding: 0px 7em;
     z-index: 10;
 }
 
@@ -47,14 +47,15 @@ nav ul {
     gap: 30px;
 }
 
-nav ul li a {
+nav ul li button {
     text-decoration: none;
     color: #333;
     transition: color 0.3s ease;
+    font-size: 1em;
 }
 
-nav ul li a:hover {
-    color: #007BFF;
+nav ul li button:hover {
+    color: #fde10c;
 }
 
 /* section */
@@ -147,7 +148,6 @@ nav ul li a:hover {
 /* sec02 */
 #sec02 {
     height: 100vh;
-    border-bottom: 3px solid red;
 }
 
 .card_container {
@@ -235,22 +235,40 @@ nav ul li a:hover {
     height: 100vh;
 }
 
-.sticker {
-    width: 100px;
-    height: 100px;
-    background-color: yellow;
-    cursor: move;
+.drag_bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
 }
-.drop-area {
-    width: 200px;
-    height: 200px;
-    border: 2px dashed #ccc;
-    text-align: center;
-    line-height: 200px;
-    margin: 50px auto;
+
+.drop_area {
+    position: absolute;
+    top: 357px;
+    left: 732px;
+    width: 208px;
+    height: 202px;
+    background: #fff;
 }
-.highlight {
-    border-color: green;
+
+.drag_item {
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    top: 610px;
+    left: 1400px;
+}
+
+.drag_item img {
+    transform: rotate(-27deg);
+}
+
+.drag_item.dropped img {
+    transform: rotate(0deg);
+    /* position: absolute;
+    top: 23px;
+    left: 28px; */
 }
 
 
@@ -264,8 +282,8 @@ footer {
     background-color: #1b1c1c;
     height: 350px;
     color: #fff;
-    padding: 0px 240px;
-	font-family: 'Pretendard-ExtraLight';
+    padding: 0px 10em;
+    font-family: 'Pretendard-ExtraLight';
     font-size: 21px;
 }
 
