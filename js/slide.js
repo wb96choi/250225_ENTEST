@@ -24,5 +24,13 @@ $(document).ready(function () {
             showSlide(totalSlides - 1);
         }
     });
+
+    setInterval(function () {
+        if (currentIndex < totalSlides - 1) {
+            showSlide(currentIndex + 1);
+        } else {
+            showSlide(0);
+        }
+    }, 3000);
 });
 
